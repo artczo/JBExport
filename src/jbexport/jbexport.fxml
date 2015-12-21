@@ -5,6 +5,7 @@
 <?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.collections.*?>
 
 <GridPane hgap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jbexport.MainController">
     <rowConstraints>
@@ -15,13 +16,13 @@
         <RowConstraints minHeight="10.0" prefHeight="30.0" />
         <RowConstraints minHeight="10.0" prefHeight="30.0" />
         <RowConstraints minHeight="10.0" prefHeight="30.0" />
+        <RowConstraints minHeight="10.0" prefHeight="50.0" />
         <RowConstraints minHeight="10.0" prefHeight="30.0" />
         <RowConstraints minHeight="10.0" prefHeight="30.0" />
         <RowConstraints minHeight="10.0" prefHeight="30.0" />
         <RowConstraints minHeight="10.0" prefHeight="30.0" />
-        <RowConstraints minHeight="10.0" prefHeight="30.0" />
-        <RowConstraints minHeight="10.0" prefHeight="30.0" />
-        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+        <RowConstraints minHeight="10.0" prefHeight="50.0" />
+        <RowConstraints minHeight="10.0" prefHeight="50.0" />
         <RowConstraints minHeight="10.0" prefHeight="30.0" />
         <RowConstraints minHeight="10.0" prefHeight="30.0" />
         <RowConstraints minHeight="10.0" prefHeight="30.0" />
@@ -62,7 +63,7 @@
       <Label text="ROZMIAR" GridPane.columnIndex="10" />
       <Label text="ID" GridPane.columnIndex="11" />
       <TextField fx:id="brand" GridPane.columnSpan="3" GridPane.rowIndex="1" />
-      <TextField fx:id="title" GridPane.columnIndex="3" GridPane.columnSpan="7" GridPane.rowIndex="1" />
+      <TextField fx:id="title" onKeyReleased="#keyReleasedTitleAction" GridPane.columnIndex="3" GridPane.columnSpan="7" GridPane.rowIndex="1" />
       <TextField fx:id="size" GridPane.columnIndex="10" GridPane.rowIndex="1" />
       <TextField fx:id="id" GridPane.columnIndex="11" GridPane.rowIndex="1" />
       <Label text="SKŁAD" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
@@ -77,5 +78,42 @@
       </Label>
       <TextArea fx:id="components" GridPane.columnSpan="4" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.rowSpan="4" GridPane.vgrow="NEVER" />
       <TextArea fx:id="liningComponents" GridPane.columnIndex="4" GridPane.columnSpan="4" GridPane.rowIndex="3" GridPane.rowSpan="4" />
+      <Label text="OPIS" GridPane.rowIndex="7" GridPane.valignment="BOTTOM">
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
+      </Label>
+      <TextArea fx:id="description" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="8" GridPane.rowIndex="8" GridPane.rowSpan="4" />
+      <ChoiceBox fx:id="condition" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="12" GridPane.valignment="BOTTOM">
+          <items>
+              <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="Idealny" />
+                  <String fx:value="Świetny" />
+                  <String fx:value="Bardzo dobry" />
+                  <String fx:value="Dobry" />
+              </FXCollections>
+          </items>
+      </ChoiceBox>
+      <Label text="STAN" GridPane.rowIndex="12" GridPane.valignment="BOTTOM">
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
+      </Label>
+      <Label text="WADY" GridPane.rowIndex="13" GridPane.valignment="BOTTOM">
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
+      </Label>
+      <TextField GridPane.columnIndex="1" GridPane.columnSpan="7" GridPane.rowIndex="13" GridPane.valignment="BOTTOM" />
+      <Label text="Pozostało:" GridPane.columnIndex="8" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="TOP">
+         <padding>
+            <Insets top="5.0" />
+         </padding>
+      </Label>
+      <Label fx:id="titleSizeLabel" text="60 znaków" GridPane.columnIndex="9" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="TOP">
+         <padding>
+            <Insets top="5.0" />
+         </padding>
+      </Label>
    </children>
 </GridPane>
