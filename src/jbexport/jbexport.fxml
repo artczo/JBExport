@@ -62,9 +62,9 @@
       <Label text="TYTUŁ" GridPane.columnIndex="3" />
       <Label text="ROZMIAR" GridPane.columnIndex="10" />
       <Label text="ID" GridPane.columnIndex="11" />
-      <TextField fx:id="brand" GridPane.columnSpan="3" GridPane.rowIndex="1" />
+      <TextField fx:id="brand" onKeyReleased="#keyReleasedBrandAction" GridPane.columnSpan="3" GridPane.rowIndex="1" />
       <TextField fx:id="title" onKeyReleased="#keyReleasedTitleAction" GridPane.columnIndex="3" GridPane.columnSpan="7" GridPane.rowIndex="1" />
-      <TextField fx:id="size" GridPane.columnIndex="10" GridPane.rowIndex="1" />
+      <TextField fx:id="size" onKeyReleased="#keyReleasedSizeAction" GridPane.columnIndex="10" GridPane.rowIndex="1" />
       <TextField fx:id="id" GridPane.columnIndex="11" GridPane.rowIndex="1" />
       <Label text="SKŁAD" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
          <padding>
@@ -110,7 +110,7 @@
             <Insets top="5.0" />
          </padding>
       </Label>
-      <Label fx:id="titleSizeLabel" text="60 znaków" GridPane.columnIndex="9" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="TOP">
+      <Label fx:id="titleSizeLabel" text="58 znaków" GridPane.columnIndex="9" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="TOP">
          <padding>
             <Insets top="5.0" />
          </padding>
